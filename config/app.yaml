@@ -1,0 +1,4 @@
+# data source name for the database
+# in production environment variable: FOO_DSN
+dsn: "root@/tax_calculator_db"
+
