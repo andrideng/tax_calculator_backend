@@ -8,8 +8,11 @@ import (
 	"github.com/go-ozzo/ozzo-routing/content"
 	"github.com/go-ozzo/ozzo-routing/cors"
 
+	"github.com/andrideng/tax-calculator/apis"
 	"github.com/andrideng/tax-calculator/app"
+	"github.com/andrideng/tax-calculator/daos"
 	"github.com/andrideng/tax-calculator/errors"
+	"github.com/andrideng/tax-calculator/services"
 	routing "github.com/go-ozzo/ozzo-routing"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -75,6 +78,10 @@ func buildRouter(logger *logrus.Logger, db *dbx.DB) *routing.Router {
 	rg.Get("/ping", func(c *routing.Context) error {
 		return c.Write("PONG")
 	})
+
+	// - bills route
+	billDAO := daos.NewBillDAO()
+	apis.ServeBillResource(rg, services.NewBillService(billDAO))
 
 	return router
 }
