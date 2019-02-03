@@ -23,16 +23,16 @@ func (dao *BillDAO) Get(rs app.RequestScope, id int64) (*models.Bill, error) {
 }
 
 // List retrieves all bill record from database.
-func (dao *BillDAO) List(rs app.RequestScope) ([]models.Bill, error) {
-	bills := []models.Bill{}
-	err := rs.Tx().Select().All(&bills)
+func (dao *BillDAO) List(rs app.RequestScope) ([]models.TaxBill, error) {
+	bills := []models.TaxBill{}
+	err := rs.Tx().Select().From("bills").All(&bills)
 	return bills, err
 }
 
 // Create saves a new bill record in the database.
 // The Tax.Id field will be populated with an automatically generated ID upon successfull saving.
 func (dao *BillDAO) Create(rs app.RequestScope, bill *models.Bill) error {
-	bill.CreatedAt = time.Now()
-	bill.UpdatedAt = time.Now()
+	bill.CreatedAt = time.Now().Format("2006-01-02 15:04:05")
+	bill.UpdatedAt = time.Now().Format("2006-01-02 15:04:05")
 	return rs.Tx().Model(bill).Insert()
 }

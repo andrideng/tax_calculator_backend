@@ -81,7 +81,8 @@ func buildRouter(logger *logrus.Logger, db *dbx.DB) *routing.Router {
 
 	// - bills route
 	billDAO := daos.NewBillDAO()
-	apis.ServeBillResource(rg, services.NewBillService(billDAO))
+	taxDAO := daos.NewTaxDAO()
+	apis.ServeBillResource(rg, services.NewBillService(billDAO, taxDAO))
 
 	return router
 }

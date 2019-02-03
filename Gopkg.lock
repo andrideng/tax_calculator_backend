@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  digest = "1:5d3e23515e7916c152cc665eda0f7eaf6fdf8fdfe7c3dbac97049bcbd649b33f"
+  name = "github.com/Knetic/govaluate"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "d216395917cc49052c7c7094cf57f09657ca08a8"
+  version = "v3.0.0"
+
+[[projects]]
   digest = "1:87c2e02fb01c27060ccc5ba7c5a407cc91147726f8f40b70cceeedbc52b1f3a8"
   name = "github.com/Sirupsen/logrus"
   packages = ["."]
@@ -115,6 +123,18 @@
   version = "v1.2.0"
 
 [[projects]]
+  digest = "1:8de64b4f5a42cdfdb0f5c13c64253d5db1a1ee7591dcc2e069165fb5ff3d9806"
+  name = "github.com/rogpeppe/godef"
+  packages = [
+    "go/ast",
+    "go/scanner",
+    "go/token",
+  ]
+  pruneopts = "UT"
+  revision = "5784335da72394c8f53d9036c26fcc876718879b"
+  version = "v1.1.1"
+
+[[projects]]
   digest = "1:d707dbc1330c0ed177d4642d6ae102d5e2c847ebd0eb84562d0dc4f024531cfc"
   name = "github.com/spf13/afero"
   packages = [
@@ -211,6 +231,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/Knetic/govaluate",
     "github.com/Sirupsen/logrus",
     "github.com/go-ozzo/ozzo-dbx",
     "github.com/go-ozzo/ozzo-routing",
@@ -220,6 +241,7 @@
     "github.com/go-ozzo/ozzo-routing/fault",
     "github.com/go-ozzo/ozzo-validation",
     "github.com/go-sql-driver/mysql",
+    "github.com/rogpeppe/godef/go/ast",
     "github.com/spf13/viper",
     "gopkg.in/yaml.v2",
   ]

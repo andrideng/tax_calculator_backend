@@ -52,3 +52,7 @@
 [[constraint]]
   name = "github.com/go-sql-driver/mysql"
   version = "1.4.1"
+
+[[constraint]]
+  name = "github.com/Knetic/govaluate"
+  version = "3.0.0"
