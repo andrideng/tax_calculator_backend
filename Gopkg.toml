@@ -25,6 +25,11 @@
 #   unused-packages = true
 
 
+[metadata.heroku]
+  root-package = "tax-calculator"
+  go-version = "go1.9.2"
+  install = [ "./..." ]
+
 [prune]
   go-tests = true
   unused-packages = true
