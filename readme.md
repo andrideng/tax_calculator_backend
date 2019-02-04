@@ -10,6 +10,13 @@
 * Golang v1.5 or above.
 * Mysql v5.7 or above
 
+## Step to create database
+
+```
+1. Create database with name [tax_calculator_db]
+2. Import query from testdata/db.sql
+```
+
 ## Getting Started
 
 If this is your first time encountering Go, please follow [the instructions](https://golang.org/doc/install) to
